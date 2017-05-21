@@ -3,22 +3,22 @@ layout: chapter
 title: IDs
 section: Background
 permalink: /chapters/ids/
-description: Learn why using IDs as hooks for styling are problematic and what you should do instead.
+description: Découvrez pourquoi l'utilisation d'IDs comme hooks pour appliquer du style est problématique et ce qu'il faudrait faire à la place.
 ---
+Sémantiquement parlant, nous devrions utiliser un ID quand il n'y a qu'une seule instance d'un élément, et nous devrions utiliser une classe quand il y a plusieurs instances d'un élément.
 
-Semantically speaking, we should use an ID when there is only one instance of a thing. And we should use a class when there are several.
+Pour autant, [les IDs l'emportent sur les classes](http://www.w3.org/TR/css3-selectors/#specificity) (texte en anglais :uk:) en terme de magnitude, ce qui est un problème quand nous voulons surcharger du style.
+Pour illustrer le problème, surchargeons la couleur d'un élément de *red* à *blue* en utilisant un ID.
 
-However, [IDs overpower class names](http://www.w3.org/TR/css3-selectors/#specificity) by orders of magnitude, which is a problem when we want to override a style.
+Voici l'HTML :
 
-
-To demonstrate the problem, let's override the colour of an element from *red* to *blue* using an ID.
-
-Here's the HTML:
-
+```
 	<div id="module" class="module-override">
+```
 
-And the CSS:
+Et le CSS :
 
+```
 	#module {
 	  color: red;
 	}
@@ -26,13 +26,18 @@ And the CSS:
 	.module-override {
 	  color: blue;
 	}
+```
 
-The element will be red even though the override class declares blue. Let's fix this by swapping the ID for a class:
 
+Le texte de l'élément sera rouge, même si nous créons une classe surchargeant la couleur du texte en *blue*. Réparons cela en remplaçant l'ID par une classe.
+
+```
 	<div class="module module-override">
+```
 
-And the CSS:
+Et le CSS :
 
+```
 	.module {
 	  color: red;
 	}
@@ -40,15 +45,16 @@ And the CSS:
 	.module-override {
 	  color: blue;
 	}
+```
 
-Now, the element is blue&mdash;problem solved.
+Le texte de l'élément est maintenant de couleur bleu. Problème résolu !
 
-Whilst using IDs for styling is problematic, we can still use them for other things. For example, we'll most certainly need to use them to connect:
+Même si l'utilisation d'IDs pour appliquer du style est problématique, nous pouvons toujours les utiliser pour autre chose. Par exemple, aurons besoin d'IDs pour connecter :
 
-- labels to form fields
-- in-page anchors to a hash fragment in the URL
-- ARIA attributes to help screen reader users
+- les labels à leurs champs de formulaire
+- les ancres
+- les attributs ARIA pour aider les utilisateurs ayant recours aux lecteurs d'écrans.
 
-## Final thought
+## Derniers mots :checkered_flag:
 
-Use IDs whenever you need to enable particular behaviours for browsers and assistive technology. But avoid using them as hooks for styles.
+Utilisez les IDs quand vous en avez besoin pour rendre possible des comportements particuliers pour les navigateurs et les technologies d'assistance. Mais évitez de les utiliser comme _hooks_ pour vos styles.

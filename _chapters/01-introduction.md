@@ -3,33 +3,35 @@ layout: chapter
 title: Introduction
 section: Preface
 permalink: /chapters/introduction/
-description: An introduction to MaintainableCSS, an approach to writing modular, scalable and of course maintainable CSS.
+description: Introduction à MaintainableCSS, a une méthodologie permettant d'aborder de façon modulaire, évolutive et bien sûr, maintenable l'écriture du CSS.
 ---
 
-MaintainableCSS is an approach to writing modular, scalable and maintainable CSS. Not only does this guide explain *how* to do this, but more importantly it explains *why*.
+_MaintainableCSS_ est une méthodologie permettant d'écrire de façon modulaire, évolutive et maintenable du CSS. Ce guide n'explique pas seulement *comment* le faire, mais, plus important, il explique *pourquoi* le faire.
 
-## There's nothing to download
+## Rien à télécharger :zap:
 
-This is not a library or framework. It's a set of principles, guides and conventions to help you write CSS for small or large-scale websites.
+Ce n'est pas une bibliothèque ou un framework. Il s'agit d'un ensemble de principes, guides et conventions pour vous aider à écrire du CSS pour des projets de simple et grande envergure.
 
-## What does maintainable mean?
+## Ça veut dire quoi, maintenable ? :suspect:
 
-Maintainable CSS can be defined as being able to make styling changes, without worrying about accidentally causing problems elsewhere.
+Du CSS **maintenable** peut être défini comme rendant possible des modifications de style sans s'inquiéter de créer des problèmes de style ailleurs.
 
-## What does scalable mean?
+## Ça veut dire quoi, évolutif ? :suspect:
 
-Scalable CSS means that as CSS increases in size, it's still easy to maintain. If you've ever inherited a large CSS codebase, and been afraid to make changes, you'll sympathise with this.
+Du CSS **évolutif** signifie qu'en même temps que sa taille évolue, il est toujours facile à maintenir. Si vous avez déjà hérité d'un projet avec une grosse base CSS existante et avez eu peur d'effectuer des changements dessus, MaintainableCSS va vous plaire.
 
-## What does modular mean?
+## Ça veut dire quoi, modulaire ? :suspect:
 
-A module is a distinct, independent unit that can be combined with other modules to form a more complex structure. In a living room, we can consider the TV, the sofa and the wall art to be modules, all coming together to create a room.
+Un module est une unité **distincte et indépendante** qui peut être combiné avec d'autres modules pour faire une structure plus complexe. Par exemple, dans un salon, on peut considérer la télévision, le canapé et la décoration murale comme des modules qui, une fois assemblés ensemble, créent la pièce.
 
-If we take one of the units away, the others still work. We don't need the TV to be able to sit on the sofa etc. In a website the header, registration form, shopping basket, article, product list, navigation and homepage promo can all be considered to be modules.
+Si l'on retire une des unités, les autres continuent de fonctionner sans problèmes. Pour reprendre l'exemple précédent, on peut retirer le canapé du salon: la télévision n'en a pas besoin pour fonctionner.
 
-## Is this for you?
+Autre exemple: dans un site e-commerce, le header, un formulaire d'inscription, un panier, un article, une liste de produits, la navigation et un bandeau promotionnel peuvent tous être considérés comme des modules.
 
-If you've ever experienced pain when writing or maintaining CSS, then you'll find useful information in this book. And if you work in a team, this book can serve as documentation for you and your team.
+## Est-ce pour moi ? :suspect:
 
-## Is this hard to learn?
+Si vous avez déjà souffert en écrivant ou en maintenant du CSS, alors vous trouverez des informations utiles dans ce livre. Et si vous travaillez en équipe, ce livre peut servir de documentation pour vous et votre équipe.
 
-No. You can read this in under 20 minutes which includes the rationale behind the approach. Implementing it takes less than a minute.
+## Est-ce difficile à apprendre ? :suspect:
+
+Non. Vous pouvez lire ceci en à peine 20 minutes, toutes explications derrière la  méthodologie comprises. La mise en pratique prend moins d'une minute.
