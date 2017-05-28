@@ -1,6 +1,6 @@
 ---
 layout: chapter
-title: Reuse
+title: Réutilisation
 section: Background
 permalink: /chapters/reuse/
 description: Découvrez en quoi éviter la réutilisation et embrasser la répétition rend la maintenance plus simple.

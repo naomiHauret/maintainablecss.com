@@ -3,15 +3,15 @@ layout: chapter
 title: Organisation
 section: Extras
 permalink: /chapters/organisation/
-description: Learn how to organise your CSS files.
+description: Découvrez comment organiser vos fichiers CSS.
 ---
+Du bon code est facile à trouver. Du code facile à trouver est du code bien organisé. Ça tombe donc sous le bon sens de vouloir que notre CSS soit bien organisé. Il y a, d'une manière générale, 2 approches que nous pouvons choisir, lesquelles nous aborderons dans ce chapitre.
 
-Good code is easy-to-find and easy-to-find code is well-organised. And so it follows we want our CSS to be well-organised. There are, generally speaking, two approaches to choose from, both of which we'll discuss in this chapter.
+## 1. CSS dans un seul dossier :file_folder:
 
-## 1. CSS in a single folder
+Dans cette approche, tous nos fichiers CSS se trouvent dans un seul dossier :
 
-This approach puts all CSS inside a single folder:
-
+```
 	/path/to/css
 	  /vendor
         some3rdParty.css
@@ -20,18 +20,21 @@ This approach puts all CSS inside a single folder:
 	    some.css
 	    global.css
 	    basket.css
+```
 
-### Notes
+### Remarques :thought_balloon:
 
-* Third-party CSS files live under `/vendor`.
-* The application's CSS lives under `/yourApp` where *yourApp* is the name of your project.
-* This approach simplifies deployment because a build script can easily target a single directory in order to bundle and compress the files.
-* This seems to be the most common approach but that doesn't mean it's the best.
+* Les fichiers CSS tierces (ex: normalize.css, bootstrap.css etc.) se trouvent dans le dossier `/vendor`.
+* Les fichiers CSS de l'application se trouvent dans le dossier `/yourApp` où *yourApp* est le nom de votre projet.
+* Cette approche simplifie le déploiement car le script de construction (*build* :uk:) peut facilement cibler un seul dossier afin d'empaqueter (*bundle* :uk:) et compresser les fichiers.
+* Cela semble être l'approche la plus répandue, mais ce n'est pas la meilleure.
 
-## 2. CSS in a module folder
+## 2. CSS dans un dossier de module
 
+Cette approche place le CSS spécifique à un module dans un dossier séparé :
 This approach puts module-specific CSS within a folder of its own:
 
+```
 	/global
 	  /css
 	    resetPerhaps.css
@@ -52,31 +55,34 @@ This approach puts module-specific CSS within a folder of its own:
         basket.css
 	/header
 	  ...
+```
 
-### Notes
+### Remarques :thought_balloon:
 
-* We normally orientate ourselves by feature as opposed to technology, making this approach a compelling one.
-* Global CSS needs a folder of its own because global styles by their very nature don't belong to a module.
-* This approach is more likely to suffer from the *31 CSS file limit problem*, which is explained next.
+* On s'organise normalement par fonctionnalité plutôt que par technologie, ce qui rend cette approche percutante.
+* Le CSS global a besoin de son propre dossier car les styles globaux n'appartiennent, de par leur nature, à aucun module.
+* Cette approche est plus susceptible de souffrir du *problème de limite des 31 fichiers CSS*, que nous allons tout de suite aborder.
 
-## The 31 CSS file limit problem
 
-Whichever approach you take, be aware of the 31 CSS file limit found in versions of Internet Explorer. Internet Explorer 9, for example, ignores styles stored in the 32nd (or 33rd etc) file.
+## Le problème de limite des 31 fichiers CSS :rage1:
 
-For production this is fine, because we should bundle our CSS to reduce HTTP requests. But for local development it's better to work with source files to make debugging easier. And it's in legacy browsers where bugs normally arise.
+Peu importe l'approche que vous choisissez, soyez conscient de la **limite des 31 fichiers CSS** qui existe dans certaines versions d'Internet Explorer: par exemple, IE9 ignore les styles stockés dans le 32ème, 33ème, 34ème fichiers etc.
 
-**If you have a compilation step** for local development&mdash;as would be the case when using a CSS preprocessor&mdash;you don't need to worry. The preprocessor will bundle the files.
+En production cela ne pose pas de problème car nous devrions empaqueter nos CSS pour réduire le nombre de requêtes HTTP. Mais en développement local, il est préférable de trvailler avec les fichiers sources pour faciliter le débuggage.
 
-**If you don't have a compilation step** for local development&mdash;because debugging source files is easier this way&mdash;then you may want to remedy this with one of two approaches:
+**Si vous avez une étape de compilation** pour le développement local (comme lorsque c'est le cas quand on utilise un préprocesseur comme Sass, LESS ou Stylus), pas besoin de s'inquiéter. Le préprocesseur empaquettera les fichiers.
 
-### 1. Add an option to concatenate CSS locally
+**Si vous n'avez une étape de compilation** pour le développement local (car débugger les fichiers sources est plus facile de cette manière), alors vous pourriez vouloir remédier à cela avec une de ces 2 approches.
 
-By doing this you'll be able to mimick production and debug CSS in offending legacy browsers.
 
-### 2. Use less than 32 CSS files
+### 1.Ajouter une option pour concaténer votre CSS en local :+1:
 
-As you'll probably have more than 31 modules, you can't organise your CSS by module. Instead you'll have to put several modules within the same CSS file.
+En faisant cela, vous serez capable de reproduire ce que vous obtenez en production et débugger dans les navigateurs qui causent problème.
 
-## Final thought
+### 2. Utiliser moins de 32 fichiers CSS :+1:
 
-In this chapter we've discussed two ways in which to organise CSS. Whichever approach we take, we should be aware of the 31 CSS file limit problem because it makes debugging CSS much harder in the very browsers that cause most trouble.
+Comme vous allez probablement avoir plus de 31 modules, vous ne pouvez pas organiser votre CSS en modules. A la place, il va falloir placer plusieurs modules dans un seul fichier CSS.
+
+## Derniers mots :checkered_flag:
+
+Dans ce chapitre nous avons vu deux façons d'organiser le CSS. Peu importe celle que nous choisissons, nous devons faire attention à la limite des 31 fichiers CSS car elle rend le débuggage plus compliqué dans les navigateurs qui causent le plus de problèmes.

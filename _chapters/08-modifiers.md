@@ -1,29 +1,36 @@
 ---
 layout: chapter
-title: Modifiers
+title: Modifieurs
 section: Core
 permalink: /chapters/modifiers/
-description: Use modifiers to change appearance based on slight differences.
+description: Utilisez les modifieurs pour changer l'apparence selon de légères différences.
 ---
 
-Like state, modifiers also override styles. They are useful when modules (or components) have small and well understood differences.
+Comme l'état, les modifieurs (*modifiers* :uk:) surchargent aussi le style. Ils sont utiles quand les modules (ou composants) ont de peties différences bien comprises.
 
-Take an e-commerce site whereby each category has a unique background image in the header. All headers have the same padding, and margin etc. The only difference is the background image.
+Prenons l'exemple d'un site e-commerce où chaque catégorie a une image d'arrière-plan unique dans le header. Tous les headers ont le même padding, margin etc. La seule différence se trouve dans l'image d'arrière-plan.
 
-The boys category would have a modifier as follows:
+La catégorie 'garçon' pourrait avoir le modifieur suivant :
 
+```
 	<div class="categoryHeader categoryHeader--boys">
+```
 
-And similarly, the girls category would have a *girls* modifier:
+De même, pour la catégorie 'fille' :
 
+```
 	<div class="categoryHeader categoryHeader--girls">
+```
 
-The CSS would be:
+Le CSS associé :
 
+```
 	.categoryHeader {
 	  padding-top: 50px;
 	  padding-bottom: 50px;
-	  /* etc */
+
+		...
+
 	}
 
 	.categoryHeader--boys {
@@ -33,15 +40,19 @@ The CSS would be:
 	.categoryHeader--girls {
 	  background-image: url(/path/to/girls.jpg);
 	}
+	```
 
-Because the differences are small and well understood, this type of reuse is more maintainable.
+Car les différences sont petites et bien comprises, ce tyle de réutilisation est beaucoup plus maintenable.
 
-We can use the same approach for buttons. Most sites have a primary and secondary button style. If all that changes is one or two styles we can have a modifier for primary and secondary buttons as follows:
+On peut utiliser la même approche pour les boutons. La plupart des sites ont des boutons avec un style primaire et un secondaire. S'il n'y a qu'une ou deux règles qui changent, on peut avoir un modifieur primaire et un secondaire comme suit :
 
+```
 	.button {
 	  padding: 20px;
 	  border-radius: 3px;
-	  /* etc */
+
+	  ...
+
 	}
 
 	.button--primary {
@@ -51,9 +62,10 @@ We can use the same approach for buttons. Most sites have a primary and secondar
 	.button--secondary {
 	  background-color: #eee;
 	}
+```
 
-Again, this only works because the differences are well contained and well understood.
+Encore une fois, cela ne fonctionne que parce que les différences sont infimes et bien comprises.
 
-## Final thought
+## Derniers mots :checkered_flag:
 
-Modifiers are a good way to reuse styles across a well understood element. But, the modifier itself should be a tweak. If it contains a lot of overrides, then modifiers are not the way to go. Instead use a [module](/chapters/modules/).
+Les modifieurs sont un bon moyen de réutiliser du style dans plusieurs éléments. Mais le modifieur lui-même doit être qu'un petit ajustement. S'il surcharge beaucoup de style, alors ce n'est pas un modifieur qu'il faut utiliser : préférez utiliser un module.
